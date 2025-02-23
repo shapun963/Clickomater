@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#88000000"
+    tools:context=".ui.activity.SaveTaskActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        app:behavior_hideable="true"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bottom_sheet_background"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_view_img"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_margin="8dp"
+                    app:cardBackgroundColor="?colorPrimary"
+                    app:cardCornerRadius="50dp">
+
+                    <TextView
+                        android:id="@+id/tv_icon_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="CA"
+                        android:textColor="@color/white"
+                        android:textSize="50dp"
+                        tools:ignore="HardcodedText,SpUsage" />
+
+                    <ImageView
+                        android:id="@+id/img_icon"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="Preview image"
+                        android:scaleType="centerCrop"
+                        tools:ignore="HardcodedText" />
+                </androidx.cardview.widget.CardView>
+
+                <ImageView
+                    android:id="@+id/img_remove"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="end|top"
+                    android:contentDescription="Remove Image"
+                    android:src="@drawable/ic_baseline_cancel_24"
+                    android:translationZ="5dp"
+                    app:tint="@color/design_default_color_error"
+                    tools:ignore="HardcodedText" />
+            </FrameLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/text_input_layout_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:padding="8dp"
+                app:boxBackgroundColor="#00000000">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edittext_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:hint="Name"
+                    android:textSize="18sp"
+                    app:boxBackgroundColor="#00000000"
+                    tools:ignore="HardcodedText" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="Trim delay between tasks by "/>
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="true"
+                android:scrollbars="none">
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chip_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:singleSelection="true"
+                android:padding="8dp">
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_0ms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checkable="true"
+                    android:checked="true"
+                    android:text="0 ms"/>
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_300ms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checkable="true"
+                    android:text="300 ms"/>
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_500ms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checkable="true"
+                    android:text="500 ms"/>
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_1000ms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checkable="true"
+                    android:text="1000 ms"/>
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_custom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checkable="true"
+                    android:text="Custom"/>
+            </com.google.android.material.chip.ChipGroup>
+            </HorizontalScrollView>
+            <CheckBox
+                android:id="@+id/cb_shortcut_widget"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:checked="true"
+                android:padding="8dp"
+                android:text="Add shortcut to home-screen"
+                tools:ignore="HardcodedText" />
+
+            <CheckBox
+                android:id="@+id/cb_remove_initial_delay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:checked="true"
+                android:padding="8dp"
+                android:text="Remove initial delay you made to start task"
+                tools:ignore="HardcodedText" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_edit_delay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Edit time between each action"
+                app:cornerRadius="999dp"
+                tools:ignore="HardcodedText" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_save"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:text="Save"
+                app:cornerRadius="999dp"
+                tools:ignore="HardcodedText" />
+            <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/adView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                ads:adSize="BANNER"
+                ads:adUnitId="{ADMOB_BANNER_ID}"
+                ads:layout_constraintBottom_toBottomOf="parent" />
+        </LinearLayout>
+    </FrameLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

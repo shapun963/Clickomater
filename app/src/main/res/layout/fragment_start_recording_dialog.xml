@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/lin_yt_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tv_info">
+
+        <TextView
+            android:id="@+id/tv_yt_info"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:text="Cant understand how the app works ? Try watching some videos on how to use app. Click here." />
+
+        <ImageView
+            android:id="@+id/img_yt"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_youtube_logo" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tv_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lin_yt_info" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_start_recording"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start recording now"
+        app:layout_constraintTop_toBottomOf="@id/tv_info"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_go_home_start_recording"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Go to HomePage and start recoding"
+        app:layout_constraintTop_toBottomOf="@id/btn_start_recording"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

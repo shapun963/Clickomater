@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission
+        android:name="android.permission.QUERY_ALL_PACKAGES"
+        tools:ignore="QueryAllPackagesPermission" />
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Clickomater"
+        tools:targetApi="s">
+        <activity
+            android:name=".ui.activity.BuyPremiumActivity"
+            android:exported="false"
+            android:label="@string/title_activity_buy_premium"
+            android:theme="@style/Theme.Clickomater">
+        </activity>
+        <activity
+            android:name=".ui.activity.AppSelectorActivity"
+            android:exported="false"
+            android:label="@string/title_activity_app_selector"
+            android:theme="@style/Theme.Clickomater">
+        </activity>
+        <activity
+            android:name=".ui.activity.AccessibilityPermissionActivity"
+            android:exported="false"
+            android:theme="@style/Theme.TransparentActivity">
+        </activity>
+        <activity
+            android:name=".ui.activity.TransparentActivity"
+            android:exported="false"
+            android:theme="@style/Theme.TransparentActivity">
+        </activity>
+        <activity
+            android:name=".ui.activity.SaveTaskActivity"
+            android:exported="false"
+            android:theme="@style/Theme.TransparentActivity">
+        </activity>
+
+        <service
+            android:name=".service.ClickomaterService"
+            android:exported="false"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/global_action_bar_service" />
+        </service>
+
+        <activity
+            android:name=".ui.activity.MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Clickomater">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="${ADMOB_APP_ID}" />
+    </application>
+
+</manifest>

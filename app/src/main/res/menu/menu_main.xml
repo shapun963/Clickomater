@@ -1,0 +1,43 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.shapun.aabinstaller.ui.activity.MainActivity">
+    <item
+        android:id="@+id/action_premium"
+        android:orderInCategory="100"
+        android:title="Buy Premium"
+        android:icon="@drawable/ic_baseline_workspace_premium_24"
+        app:showAsAction="ifRoom"
+        tools:ignore="HardcodedText" />
+    <item
+        android:id="@+id/action_rate"
+        android:orderInCategory="100"
+        android:title="Rate"
+        android:icon="@drawable/ic_baseline_star_rate_24"
+        app:showAsAction="never"
+        tools:ignore="HardcodedText" />
+    <item
+        android:id="@+id/action_more_apps"
+        android:orderInCategory="100"
+        android:title="More Apps"
+        app:showAsAction="never"
+        tools:ignore="HardcodedText" />
+    <item
+        android:id="@+id/action_telegram"
+        android:orderInCategory="100"
+        android:title="Telegram Channel"
+        app:showAsAction="never"
+        tools:ignore="HardcodedText" />
+    <item
+        android:id="@+id/action_report_bug"
+        android:orderInCategory="100"
+        android:title="Report Bug"
+        app:showAsAction="never"
+        tools:ignore="HardcodedText" />
+    <item
+        android:id="@+id/action_suggestions"
+        android:orderInCategory="100"
+        android:title="Suggestions"
+        app:showAsAction="never"
+        tools:ignore="HardcodedText" />
+</menu>

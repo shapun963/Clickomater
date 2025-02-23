@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    tools:context=".ui.fragment.TaskInfoDialog">
+    <FrameLayout
+        android:id="@+id/frame_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/text_input_layout_name"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view_img"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        app:cardBackgroundColor="?colorPrimary"
+        app:cardCornerRadius="50dp">
+        <TextView
+            android:id="@+id/tv_icon_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="CA"
+            android:textColor="@color/white"
+            android:textSize="50dp"
+            tools:ignore="HardcodedText,SpUsage" />
+        <ImageView
+            android:id="@+id/img_icon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="Preview image"
+            android:scaleType="centerCrop"
+            tools:ignore="HardcodedText" />
+    </androidx.cardview.widget.CardView>
+    <ImageView
+        android:id="@+id/img_remove"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_baseline_cancel_24"
+        android:layout_gravity="end|top"
+        app:tint="@color/design_default_color_error"
+        android:translationZ="5dp"/>
+    </FrameLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_input_layout_name"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#00000000"
+        android:padding="8dp"
+        app:boxBackgroundColor="#00000000"
+        app:layout_constraintBottom_toTopOf="@id/btn_delete"
+        app:layout_constraintTop_toBottomOf="@id/frame_img">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edittext_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:hint="Name"
+            android:textSize="18sp"
+            app:boxBackgroundColor="#00000000"
+            tools:ignore="HardcodedText" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="?colorError"
+        app:cornerRadius="16dp"
+        android:text="Delete"
+        app:layout_constraintTop_toBottomOf="@id/text_input_layout_name"
+        app:layout_constraintBottom_toTopOf="@id/btn_create_short_cut"
+        android:textColor="?colorOnError"
+        tools:ignore="HardcodedText" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_edit_delay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cornerRadius="16dp"
+        android:text="Edit time between each action"
+        app:layout_constraintTop_toBottomOf="@id/btn_delete"
+        app:layout_constraintBottom_toTopOf="@id/btn_create_short_cut"
+        tools:ignore="HardcodedText" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_create_short_cut"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cornerRadius="16dp"
+        android:text="Add Shortcut"
+        app:layout_constraintTop_toBottomOf="@id/btn_edit_delay"
+        app:layout_constraintBottom_toTopOf="@id/btn_repeat"
+        tools:ignore="HardcodedText" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_repeat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cornerRadius="16dp"
+        android:text="Repeat"
+        app:layout_constraintTop_toBottomOf="@id/btn_create_short_cut"
+        app:layout_constraintBottom_toTopOf="@id/btn_start"
+        tools:ignore="HardcodedText" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cornerRadius="16dp"
+        android:text="Start"
+        app:layout_constraintTop_toBottomOf="@id/btn_repeat"
+        app:layout_constraintBottom_toBottomOf="@id/btn_save"
+        tools:ignore="HardcodedText" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cornerRadius="16dp"
+        android:text="Save"
+        app:layout_constraintTop_toBottomOf="@id/btn_start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="HardcodedText" />
+</androidx.constraintlayout.widget.ConstraintLayout>
